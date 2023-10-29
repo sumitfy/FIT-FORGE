@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const absM = require("./models/abs");
 const chestM = require("./models/chest");
@@ -13,7 +14,6 @@ const glutesM = require("./models/glutes");
 const obliquesM = require("./models/obliques");
 const mongoose = require("mongoose");
 const hbs = require("hbs");
-// const shoulder = require("./models/shoulder");
 const backM = require("./models/back");
 const latsM = require("./models/lats");
 const lowerBackM = require("./models/lower_back");
@@ -23,7 +23,7 @@ app.set("view engine", "hbs");
 app.set("views", "views");
 app.use("/static", express.static("public"));
 hbs.registerPartials("views/partials");
-mongoose.connect("mongodb://localhost:27017/fitness", {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -35,7 +35,6 @@ app.get("/", (req, resp) => {
 app.get("/abs", async (req, resp) => {
   try {
     const data = await absM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -46,7 +45,6 @@ app.get("/abs", async (req, resp) => {
 app.get("/chest", async (req, resp) => {
   try {
     const data = await chestM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -57,7 +55,6 @@ app.get("/chest", async (req, resp) => {
 app.get("/biceps", async (req, resp) => {
   try {
     const data = await bicepM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -68,7 +65,6 @@ app.get("/biceps", async (req, resp) => {
 app.get("/triceps", async (req, resp) => {
   try {
     const data = await tricepsM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -79,7 +75,6 @@ app.get("/triceps", async (req, resp) => {
 app.get("/calf", async (req, resp) => {
   try {
     const data = await calfM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -90,7 +85,6 @@ app.get("/calf", async (req, resp) => {
 app.get("/trap", async (req, resp) => {
   try {
     const data = await trapsM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -101,7 +95,7 @@ app.get("/trap", async (req, resp) => {
 app.get("/forearm", async (req, resp) => {
   try {
     const data = await forearmM.find();
-    // console.log(data);
+
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -111,7 +105,6 @@ app.get("/forearm", async (req, resp) => {
 app.get("/quadriceps", async (req, resp) => {
   try {
     const data = await quadM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -121,7 +114,6 @@ app.get("/quadriceps", async (req, resp) => {
 app.get("/shoulder", async (req, resp) => {
   try {
     const data = await shoulderM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -131,7 +123,6 @@ app.get("/shoulder", async (req, resp) => {
 app.get("/hamstrings", async (req, resp) => {
   try {
     const data = await hamestringM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -141,7 +132,6 @@ app.get("/hamstrings", async (req, resp) => {
 app.get("/glutes", async (req, resp) => {
   try {
     const data = await glutesM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -151,7 +141,6 @@ app.get("/glutes", async (req, resp) => {
 app.get("/back", async (req, resp) => {
   try {
     const data = await backM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -161,7 +150,6 @@ app.get("/back", async (req, resp) => {
 app.get("/lowerback", async (req, resp) => {
   try {
     const data = await lowerBackM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -171,7 +159,6 @@ app.get("/lowerback", async (req, resp) => {
 app.get("/lats", async (req, resp) => {
   try {
     const data = await latsM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
@@ -181,14 +168,12 @@ app.get("/lats", async (req, resp) => {
 app.get("/obliques", async (req, resp) => {
   try {
     const data = await obliquesM.find();
-    // console.log(data);
     resp.render("abs", { data: data });
   } catch (err) {
     console.error(err);
     resp.status(500).send("Error fetching data from MongoDB");
   }
 });
-
 // const chestdata = ([
 //     {
 //         E_mainDesc:"Now that we'’\'re aware of the benefits of the abs workout for men and women, let’s look at the six easy exercises to begin your workout journey. These exercises have been selected such that even a beginner can efficiently perform them.  Notably, we are starting with basics, and you can perform these workouts even at your home. It is advisable to perform them for 30-45 seconds with a break of 20 seconds in between. ",
@@ -1200,4 +1185,4 @@ app.get("/obliques", async (req, resp) => {
 // lowerBackM.insertMany(lowerBackExercises);
 // latsM.insertMany(latExercises);
 // obliquesM.insertMany(obliquesExercises);
-app.listen(4444);
+app.listen(process.env.PORT);

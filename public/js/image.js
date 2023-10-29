@@ -165,11 +165,9 @@ obliques_area2.addEventListener("click", () => {
 window.onload = function() {
   var customAlert = document.getElementById("custom-alert");
   var okButton = document.getElementById("ok-button");
-
-  // Show the alert message
   customAlert.style.display = "block";
+  
 
-  // Close the alert message when the "OK" button is clicked
   okButton.onclick = function() {
       customAlert.style.display = "none";
   };

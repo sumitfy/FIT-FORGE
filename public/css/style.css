@@ -1,8 +1,5 @@
 body{
-  /* background-color: rgba(255, 255, 255, 0.414); */
-  /* background-color: #FFDDCC; */
   background-color: #ffe9dd;
-  /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='auto' height='auto' preserveAspectRatio='none' viewBox='0 0 auto auto'%3e%3cg mask='url(%26quot%3b%23SvgjsMask9100%26quot%3b)' fill='none'%3e%3crect width='auto' height='auto' x='0' y='0' fill='rgba(245%2c 214%2c 214%2c 1)'%3e%3c/rect%3e%3cpath d='M727.5 665.35C840.92 672.73 966.08 681.16 1049.79 604.29 1135.57 525.51 1152.94 398.18 1144.88 282 1137.4 174.12 1079.23 82.9 1007.97 1.53 929.83-87.68 845.96-188.9 727.5-194.54 605.88-200.36 500.55-116.92 418.88-26.62 341.7 58.72 291.42 167.05 296.41 282 301.21 392.57 361.93 491.34 444.62 564.88 522.38 634 623.66 658.58 727.5 665.35' fill='rgba(231%2c 152%2c 152%2c 1)'%3e%3c/path%3e%3cpath d='M727.5 530.05C800.89 534.82 881.87 540.28 936.04 490.54 991.54 439.56 1002.79 357.17 997.57 282 992.73 212.19 955.09 153.17 908.98 100.52 858.42 42.79 804.15-22.7 727.5-26.35 648.81-30.11 580.65 23.87 527.81 82.31 477.87 137.53 445.33 207.62 448.56 282 451.66 353.54 490.96 417.45 544.46 465.04 594.77 509.77 660.31 525.67 727.5 530.05' fill='rgba(190%2c 90%2c 90%2c 0.97)'%3e%3c/path%3e%3cpath d='M727.5 394.75C760.86 396.92 797.67 399.4 822.29 376.79 847.52 353.62 852.63 316.17 850.26 282 848.06 250.27 830.95 223.44 809.99 199.51 787.01 173.27 762.34 143.5 727.5 141.84 691.73 140.13 660.75 164.67 636.73 191.23 614.03 216.33 599.24 248.19 600.71 282 602.12 314.52 619.98 343.57 644.3 365.2 667.17 385.53 696.96 392.76 727.5 394.75' fill='rgba(228%2c 200%2c 200%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask9100'%3e%3crect width='auto' height='auto' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e"); */
 }
 *::selection{
   background-color: black;
@@ -13,29 +10,24 @@ body{
 }
 
 .map-container {
-    max-width: 100%; /* Adjust as needed */
+    max-width: 100%; 
     height: auto;
     position: relative;
   }
   .map-container img {
-    /* max-width: 100%; */
     height: auto;
     display: block;
     width: auto;
     background-position: 'center';
   }
- /* Custom alert message styles */
-/* Custom alert message styles */
 
 #custom-alert {
-  display: none; /* Hide the message initially */
   position: absolute;
   align-self: center;
   justify-self: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* transform: translate(-50%, -50%); */
   background-color: #3c3c3c;
   border: 2px solid #fdfcfc;
   border-radius: 1.5dvh;
@@ -65,12 +57,11 @@ body{
 }
 
 .clickable-area {
-    cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
+    cursor: pointer; 
   }
   
   .clicked-area {
-    background-color: red; /* Change the background color for clicked areas */
-    /* Add any other styles you want for clicked areas */
+    background-color: red;
   }
   #webcoderskull{
     position: absolute;
@@ -96,17 +87,5 @@ body{
   padding: 0 10px 0 10px;
 }
 .Tap{
-  /* background-color: rgb(174, 174, 174); */
   color: #d96363d6;
 }
-/* canvas{
-    height:100vh;
-    background-color:#FFF5E0;
-}
-#webcoderskull h1{
-  letter-spacing: 5px;
-  font-size: 5rem;
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-} */
